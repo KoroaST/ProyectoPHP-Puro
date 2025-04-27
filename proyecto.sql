@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-04-2025 a las 09:49:36
+-- Tiempo de generación: 28-04-2025 a las 01:02:59
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -45,9 +45,9 @@ CREATE TABLE `autos` (
 --
 
 INSERT INTO `autos` (`id`, `marca`, `modelo`, `anio`, `precio`, `estado`, `descripcion`, `fecha_creacion`, `imagen`, `stock`) VALUES
-(1, 'Nissan', 'GTR-34', 1999, 50000.00, 'disponible', 'Un auto clásico y legendario.', '2025-03-09 05:39:28', 'GTR-34.jpg', 4),
-(2, 'Nissan', 'GTR-35', 2022, 120000.00, 'disponible', 'El superdeportivo moderno.', '2025-03-09 05:39:28', 'GTR-35.jpg', 5),
-(3, 'Nissan', 'GTR-33', 2002, 500000.00, 'disponible', 'Auto veloz paAAAAAAAAAAA', '2025-03-09 06:51:40', 'GTR-33.jpg', 5);
+(1, 'Nissan', 'GTR-34', 1999, 50000.00, 'disponible', 'Un auto clásico y legendario.', '2025-03-09 05:39:28', 'GTR-34.jpg', 5),
+(2, 'Nissan', 'GTR-35', 2022, 120000.00, 'disponible', 'El superdeportivo moderno.', '2025-03-09 05:39:28', 'GTR-35.jpg', 3),
+(3, 'Nissan', 'GTR-33', 2002, 500000.00, 'disponible', 'Auto veloz paAAAAAAAAAAA', '2025-03-09 06:51:40', 'GTR-33.jpg', 4);
 
 -- --------------------------------------------------------
 
@@ -71,6 +71,18 @@ CREATE TABLE `cache_locks` (
   `key` varchar(255) NOT NULL,
   `owner` varchar(255) NOT NULL,
   `expiration` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categorias`
+--
+
+CREATE TABLE `categorias` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -100,8 +112,10 @@ CREATE TABLE `compras` (
 --
 
 INSERT INTO `compras` (`id`, `usuario_id`, `primer_nombre`, `primer_apellido`, `segundo_apellido`, `direccion_envio`, `email`, `telefono`, `ultimos_digitos`, `metodo_pago`, `total`, `fecha_compra`, `estado`) VALUES
-(3, 24, 'Sebastian Cacorro', 'Cardona', 'amigo', 'Calle 10 #5-23, Edificio Torre Central, Cartago', 'cardona@gmail.com', '3101234567', '1111', 'Tarjeta', 50000.00, '2025-04-20 05:12:20', 'pendiente'),
-(4, 1, 'freiman', 'nose', 'ssss', 'asdada', 'adsad@gmail.com', '12243214', '4444', 'Tarjeta', 50000.00, '2025-04-20 06:19:55', 'pendiente');
+(5, 26, 'efrain', 'lopez', 'lopez', '5-23 cartago', 'efrainlopez@gmail.com', '3156342189', '3564', 'Tarjeta', 120000.00, '2025-04-27 20:13:40', 'completado'),
+(6, 24, 'Andrea', 'Rivera', 'Díaz', 'Calle 10 #5-23, Edificio Torre Central, Cartago', 'andreita@gmail.com', '3596422211', '3456', 'Tarjeta', 120000.00, '2025-04-27 22:23:18', 'completado'),
+(7, 26, 'efrain', 'sienaga', 'martinez', 'Carrera 12 #34-56, Edificio Torre Central, Apartamento 402', 'efrain@gail.com', '7587983444', '3456', 'Tarjeta', 500000.00, '2025-04-27 22:31:13', 'completado'),
+(8, 27, 'Isabel', 'Santana', 'Tobon', 'Medellin 3923', 'Santana@gmail.com', '912894732', '3459', 'Tarjeta', 120000.00, '2025-04-27 22:54:41', 'completado');
 
 -- --------------------------------------------------------
 
@@ -122,8 +136,22 @@ CREATE TABLE `detalles_compra` (
 --
 
 INSERT INTO `detalles_compra` (`id`, `compra_id`, `auto_id`, `cantidad`, `precio_unitario`) VALUES
-(1, 3, 1, 1, 50000.00),
-(2, 4, 1, 1, 50000.00);
+(3, 5, 2, 1, 120000.00),
+(4, 6, 2, 1, 120000.00),
+(5, 7, 3, 1, 500000.00),
+(6, 8, 2, 1, 120000.00);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `detalle_pedidos`
+--
+
+CREATE TABLE `detalle_pedidos` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -196,7 +224,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '0001_01_01_000000_create_users_table', 1),
 (2, '0001_01_01_000001_create_cache_table', 1),
 (3, '0001_01_01_000002_create_jobs_table', 1),
-(4, '2025_04_18_042254_add_timestamps_to_usuarios_table', 2);
+(4, '2025_04_18_042254_add_timestamps_to_usuarios_table', 2),
+(5, '2025_04_27_201900_create_categorias_table', 3),
+(6, '2025_04_27_201901_create_clientes_table', 3),
+(7, '2025_04_27_201901_create_pedidos_table', 3),
+(8, '2025_04_27_201901_create_productos_table', 3),
+(9, '2025_04_27_201904_create_detalle_pedidos_table', 3);
 
 -- --------------------------------------------------------
 
@@ -208,6 +241,36 @@ CREATE TABLE `password_reset_tokens` (
   `email` varchar(255) NOT NULL,
   `token` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pedidos`
+--
+
+CREATE TABLE `pedidos` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `productos`
+--
+
+CREATE TABLE `productos` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `descripcion` text NOT NULL,
+  `precio` decimal(10,2) NOT NULL,
+  `imagen` varchar(255) DEFAULT NULL,
+  `stock` int(11) NOT NULL,
+  `categoria_id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -230,7 +293,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('GrMrx7atrfMiVf3tQFpjkb9PxdJRaf4wrkRTWIHF', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiT3U4UDJOSXV2a0E4c2tEREc1ZGhOZE93eUpFcmdWcFRUSkJYaks0byI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDg6Imh0dHA6Ly9sb2NhbGhvc3QvUHJveWVjdG9DYXJyb3MvcHVibGljL2Rhc2hib2FyZCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NzoidXN1YXJpbyI7czo1OiJhZG1pbiI7czoyOiJpZCI7aToyNTtzOjY6Im5vbWJyZSI7czoxMzoiQWRtaW5pc3RyYWRvciI7czozOiJyb2wiO3M6NToiYWRtaW4iO30=', 1744958097);
+('IppfLDLuUPuBOVLUk5FAiEezU7dRf0mg17H6CR4i', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSGQwSjFONTMyUDNRNDRkVktPZzc1WEpjM2VDaXpodFZ5ek8wa0FiOCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9jYXRlZ29yaWFzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1745790231);
 
 -- --------------------------------------------------------
 
@@ -267,17 +330,20 @@ CREATE TABLE `usuarios` (
   `primer_nombre` varchar(50) DEFAULT NULL,
   `segundo_nombre` varchar(50) DEFAULT NULL,
   `segundo_apellido` varchar(50) DEFAULT NULL,
-  `primer_apellido` varchar(50) DEFAULT NULL
+  `primer_apellido` varchar(50) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `clave`, `rol`, `fecha_creacion`, `created_at`, `updated_at`, `primer_nombre`, `segundo_nombre`, `segundo_apellido`, `primer_apellido`) VALUES
-(1, 'freiman', 'koroa', '$argon2id$v=19$m=1024,t=2,p=2$YXFLeDlMWmxFZGpBMUlEOA$Ls9GMQGO3n/wXIIYwLRywmrzypuf93QggBRtpw6yO6Y', 'admin', '2025-03-09 05:21:42', NULL, '2025-04-18 09:25:58', 'Nombre', NULL, NULL, 'Apellido'),
-(24, 'AndreaPrueba', 'Andrea', '$2y$10$apj1FuvhRks8JW6e081JLeUGs1ZOoj0m6.PE8h8wnIVd2F/C4fhk.', 'usuario', '2025-04-17 22:33:58', NULL, NULL, 'Nombre', NULL, NULL, 'Apellido'),
-(25, 'Administrador', 'admin', '$argon2id$v=19$m=1024,t=2,p=2$WFdiZ1guOERob3UvSTE3VA$79vXVWV9Ju5n1KN43mZ2qR13MqwOX+sv41ky6jVlBsY', 'admin', '2025-04-18 05:00:44', '2025-04-18 10:00:44', '2025-04-18 10:00:44', 'Nombre', NULL, NULL, 'Apellido');
+INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `clave`, `rol`, `fecha_creacion`, `created_at`, `updated_at`, `primer_nombre`, `segundo_nombre`, `segundo_apellido`, `primer_apellido`, `email`) VALUES
+(1, 'freiman', 'koroa', '$argon2id$v=19$m=1024,t=2,p=2$YXFLeDlMWmxFZGpBMUlEOA$Ls9GMQGO3n/wXIIYwLRywmrzypuf93QggBRtpw6yO6Y', 'admin', '2025-03-09 05:21:42', NULL, '2025-04-18 09:25:58', 'Nombre', NULL, NULL, 'Apellido', NULL),
+(24, 'AndreaPrueba', 'Andrea', '$2y$10$apj1FuvhRks8JW6e081JLeUGs1ZOoj0m6.PE8h8wnIVd2F/C4fhk.', 'usuario', '2025-04-17 22:33:58', NULL, NULL, 'Nombre', NULL, NULL, 'Apellido', NULL),
+(25, 'Administrador', 'admin', '$argon2id$v=19$m=1024,t=2,p=2$WFdiZ1guOERob3UvSTE3VA$79vXVWV9Ju5n1KN43mZ2qR13MqwOX+sv41ky6jVlBsY', 'admin', '2025-04-18 05:00:44', '2025-04-18 10:00:44', '2025-04-18 10:00:44', 'Nombre', NULL, NULL, 'Apellido', NULL),
+(26, 'Efrain Lopez', 'efrain', '$argon2id$v=19$m=65536,t=4,p=1$cFlRcGJvbnVsdlZNZW1zUg$2eFDwdHREOUGet8IgsPAIrd0Qz9+xtlb5+NEjLrXhno', 'usuario', '2025-04-27 20:11:30', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(27, 'Sofia Santana', 'Sofia', '$argon2id$v=19$m=65536,t=4,p=1$UzRRU3FZTkF4ZFRmQjRPcw$x6dxxK+ApCDmPN2F/UrrDilDizw6RWo4di62fVnMRvo', 'usuario', '2025-04-27 22:52:48', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -302,6 +368,12 @@ ALTER TABLE `cache_locks`
   ADD PRIMARY KEY (`key`);
 
 --
+-- Indices de la tabla `categorias`
+--
+ALTER TABLE `categorias`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `compras`
 --
 ALTER TABLE `compras`
@@ -315,6 +387,12 @@ ALTER TABLE `detalles_compra`
   ADD PRIMARY KEY (`id`),
   ADD KEY `compra_id` (`compra_id`),
   ADD KEY `fk_auto` (`auto_id`);
+
+--
+-- Indices de la tabla `detalle_pedidos`
+--
+ALTER TABLE `detalle_pedidos`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `failed_jobs`
@@ -349,6 +427,19 @@ ALTER TABLE `password_reset_tokens`
   ADD PRIMARY KEY (`email`);
 
 --
+-- Indices de la tabla `pedidos`
+--
+ALTER TABLE `pedidos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `productos_categoria_id_foreign` (`categoria_id`);
+
+--
 -- Indices de la tabla `sessions`
 --
 ALTER TABLE `sessions`
@@ -381,16 +472,28 @@ ALTER TABLE `autos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT de la tabla `categorias`
+--
+ALTER TABLE `categorias`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `compras`
 --
 ALTER TABLE `compras`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `detalles_compra`
 --
 ALTER TABLE `detalles_compra`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `detalle_pedidos`
+--
+ALTER TABLE `detalle_pedidos`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `failed_jobs`
@@ -408,7 +511,19 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de la tabla `pedidos`
+--
+ALTER TABLE `pedidos`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `productos`
+--
+ALTER TABLE `productos`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
@@ -420,7 +535,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Restricciones para tablas volcadas
@@ -438,6 +553,12 @@ ALTER TABLE `compras`
 ALTER TABLE `detalles_compra`
   ADD CONSTRAINT `detalles_compra_ibfk_1` FOREIGN KEY (`compra_id`) REFERENCES `compras` (`id`),
   ADD CONSTRAINT `fk_auto` FOREIGN KEY (`auto_id`) REFERENCES `autos` (`id`);
+
+--
+-- Filtros para la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD CONSTRAINT `productos_categoria_id_foreign` FOREIGN KEY (`categoria_id`) REFERENCES `categorias` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
