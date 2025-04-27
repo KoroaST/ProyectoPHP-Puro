@@ -1,0 +1,13 @@
+Para que todo tenga sinergia en el proyecto, se debe crear:
+
+Crear Carpeta "Proyecto" y después dentro de esa carpeta pegar todos los archivos.
+
+Subir la base de datos para que esté sincronizado todo.
+
+//==========================================//
+
+Link del Video del Proyecto y explicación.
+
+https://www.youtube.com/watch?v=tZuhYVF4Zvc
+
+//==========================================//

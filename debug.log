@@ -1,0 +1,346 @@
+
+
+--- NUEVO INTENTO ---
+POST: Array
+(
+    [primer_nombre] => Juan
+    [primer_apellido] => Cacorro
+    [segundo_nombre] => Sebastian
+    [segundo_apellido] => amigo
+    [direccion_residencia] => Carrera 45 #12-34, Apartamento 201, Cartago
+    [direccion_envio] => Calle 10 #5-23, Edificio Torre Central, Cartago
+    [email] => asddsd@gmail.com
+    [telefono] => 1212121
+    [numero_tarjeta] => 4111111111111111
+    [vencimiento] => 12/26
+    [cvv] => 123
+    [notas] => mas bruto para lo de web
+)
+
+SESSION: Array
+(
+    [usuario] => Array
+        (
+            [id] => 24
+            [nombre] => AndreaPrueba
+            [rol] => usuario
+        )
+
+    [rol] => usuario
+    [total] => 120000
+    [carrito] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 2
+                    [marca] => Nissan
+                    [modelo] => GTR-35
+                    [precio] => 120000.00
+                )
+
+        )
+
+)
+
+
+--- INICIO COMPRA ---
+POST: Array
+(
+    [primer_nombre] => Juan
+    [primer_apellido] => Cacorro
+    [segundo_nombre] => sss
+    [segundo_apellido] => amigo
+    [direccion_residencia] => Carrera 45 #12-34, Apartamento 201, Cartago
+    [direccion_envio] => Calle 10 #5-23, Edificio Torre Central, Cartago
+    [email] => asdasdad@gmail.com
+    [telefono] => 3101234567
+    [numero_tarjeta] => 4111111111111111
+    [vencimiento] => 11/26
+    [cvv] => 123
+    [notas] => mas bruto para lo de web
+)
+
+SESSION: Array
+(
+    [usuario] => Array
+        (
+            [id] => 24
+            [nombre] => AndreaPrueba
+            [rol] => usuario
+        )
+
+    [rol] => usuario
+    [total] => 50000
+    [carrito] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 1
+                    [marca] => Nissan
+                    [modelo] => GTR-34
+                    [precio] => 50000.00
+                )
+
+        )
+
+)
+
+
+--- INICIO COMPRA ---
+POST: Array
+(
+    [primer_nombre] => freiman
+    [primer_apellido] => nose
+    [segundo_nombre] => aa
+    [segundo_apellido] => ssss
+    [direccion_residencia] => 13212sda
+    [direccion_envio] => asdada
+    [email] => adsad@gmail.com
+    [telefono] => 12243214
+    [numero_tarjeta] => 1444444444444444
+    [vencimiento] => 12/26
+    [cvv] => 123
+    [notas] => aaaaaa
+)
+
+SESSION: Array
+(
+    [usuario] => Array
+        (
+            [id] => 1
+            [nombre] => freiman
+            [rol] => admin
+        )
+
+    [rol] => usuario
+    [carrito] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 1
+                    [marca] => Nissan
+                    [modelo] => GTR-34
+                    [precio] => 50000.00
+                )
+
+        )
+
+    [total] => 50000
+)
+
+
+--- INICIO COMPRA ---
+POST: Array
+(
+    [primer_nombre] => emilia
+    [primer_apellido] => sienaga
+    [segundo_nombre] => ermita
+    [segundo_apellido] => lopezz
+    [direccion_residencia] => nosejajajaja
+    [direccion_envio] => Calle 10 #5-23, Edificio Torre Central, Medelaaaaa
+    [email] => ermita@gmail.com
+    [telefono] => 3596422211
+    [numero_tarjeta] => 1234567890123456
+    [vencimiento] => 11/27
+    [cvv] => 123
+    [notas] => su puta madre
+)
+
+SESSION: Array
+(
+    [usuario] => Array
+        (
+            [id] => 24
+            [nombre] => Andrea Rivera
+            [usuario] => Andrea
+            [rol] => usuario
+        )
+
+    [carrito] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 1
+                    [marca] => Nissan
+                    [modelo] => GTR-34
+                    [precio] => 50000.00
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+
+--- INICIO COMPRA ---
+POST: Array
+(
+    [primer_nombre] => Javier Gonzale
+    [primer_apellido] => dsadasda
+    [segundo_nombre] => nose
+    [segundo_apellido] => sadadasdadssssssssssssssss
+    [direccion_residencia] => Carrera 45 #12-34, Apartamento 201, Cartagosssssss
+    [direccion_envio] => Calle 10 #5-23, Edificio Torre Central, Cartagossssssssssssssssssss
+    [email] => asdad@gmail.com
+    [telefono] => 3596422211
+    [numero_tarjeta] =>  4111 1111 1111 1111
+    [vencimiento] => 11/27
+    [cvv] => 123
+    [notas] => nose puta
+)
+
+SESSION: Array
+(
+    [usuario] => Array
+        (
+            [id] => 24
+            [nombre] => Andrea Rivera
+            [usuario] => Andrea
+            [rol] => usuario
+        )
+
+    [carrito] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 1
+                    [marca] => Nissan
+                    [modelo] => GTR-34
+                    [precio] => 50000.00
+                    [cantidad] => 1
+                )
+
+        )
+
+    [total] => 120000
+)
+
+
+--- INICIO COMPRA ---
+POST: Array
+(
+    [primer_nombre] => efrain
+    [primer_apellido] => lopez
+    [segundo_nombre] => diaz
+    [segundo_apellido] => lopez
+    [direccion_residencia] => barrio occidental 23# 5-32 cartago
+    [direccion_envio] => 5-23 cartago
+    [email] => efrainlopez@gmail.com
+    [telefono] => 3156342189
+    [numero_tarjeta] => 5254 1336 7440 3564
+    [vencimiento] => 11/28
+    [cvv] => 123
+    [notas] => efrain se despierta a las 12 de la tarde
+)
+
+SESSION: Array
+(
+    [usuario] => Array
+        (
+            [id] => 26
+            [nombre] => Efrain Lopez
+            [usuario] => efrain
+            [rol] => usuario
+        )
+
+    [carrito] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 2
+                    [marca] => Nissan
+                    [modelo] => GTR-35
+                    [precio] => 120000.00
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+
+--- INICIO COMPRA ---
+POST: Array
+(
+    [primer_nombre] => Andrea
+    [primer_apellido] => Rivera
+    [segundo_nombre] => Margarita
+    [segundo_apellido] => Díaz
+    [direccion_residencia] => Carrera 45 #12-34, Apartamento 201, Cartago
+    [direccion_envio] => Calle 10 #5-23, Edificio Torre Central, Cartago
+    [email] => andreita@gmail.com
+    [telefono] => 3596422211
+    [numero_tarjeta] => 1234567890123456
+    [vencimiento] => 17/2029
+    [cvv] => 123
+    [notas] => Entregar después de las 6 PM, gracias
+)
+
+SESSION: Array
+(
+    [usuario] => Array
+        (
+            [id] => 24
+            [nombre] => AndreaPrueba
+            [usuario] => Andrea
+            [rol] => usuario
+        )
+
+    [carrito] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 2
+                    [marca] => Nissan
+                    [modelo] => GTR-35
+                    [precio] => 120000.00
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+
+--- INICIO COMPRA ---
+POST: Array
+(
+    [primer_nombre] => efrain
+    [primer_apellido] => sienaga
+    [segundo_nombre] => alfonso
+    [segundo_apellido] => martinez
+    [direccion_residencia] => nosejajajaja
+    [direccion_envio] => Carrera 12 #34-56, Edificio Torre Central, Apartamento 402
+    [email] => efrain@gail.com
+    [telefono] => 7587983444
+    [numero_tarjeta] => 1234567890123456
+    [vencimiento] => 12/26
+    [cvv] => 123
+    [notas] => Entregar después de las 6 PM, llamar antes de llegar  
+)
+
+SESSION: Array
+(
+    [usuario] => Array
+        (
+            [id] => 26
+            [nombre] => Efrain Lopez
+            [usuario] => efrain
+            [rol] => usuario
+        )
+
+    [carrito] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 3
+                    [marca] => Nissan
+                    [modelo] => GTR-33
+                    [precio] => 500000.00
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
